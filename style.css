@@ -25,7 +25,8 @@
  	background-color: #06b6d4;
 	/*making grid for children*/
 	display: grid;
-	grid-template-rows: 70px auto auto;
+	grid-template-rows: 70px auto;
+	gap: 10px;
 }
 /*BRAND */
 .brand{
@@ -37,7 +38,7 @@
 .logo{
 	height: 60px;
 	width:40px;
-	padding-bottom: 40px;
+	padding-bottom: 25px;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 1fr 1fr 1fr;
@@ -66,11 +67,15 @@
 }
 /*NAVIGATION */
 .navigation{
-	
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	gap: 60px;
+
 }
 .nav{
 	list-style: none;
-	padding-bottom: 40px;
+	
 }
 .nav a{
 	color: white;
