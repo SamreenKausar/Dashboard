@@ -3,7 +3,16 @@
   margin: 0;
   box-sizing: border-box;
 }
-/* profile color #E85F3E card border #CEA055 sidebar#293347  card, header, font #EEF0EC dark font#252422 hightlighted nav #3C4858*/
+:root{
+	--orange-border: #CEA055;
+	--dark-blue: #293347;
+	--whitish:#EEF0EC;
+	--dark-grey: #252422;
+	--blue-highlight: #3C4858;
+	--light-grey:#4a606c;
+}
+
+/* profile color #E85F3E */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
 .icons{
 	height: 20px;
@@ -20,17 +29,17 @@
 	grid-template-rows: 1fr 4fr;
 }
 .container>div{
-	padding: 16px;
+	padding: 24px;
 }
 
 /*SIDEBAR area*/
 
 	.sidebar{
 		height: 100vh;
-		color: EEF0EC;
+		color: var(--whitish);
 		grid-column: 1/2;
 		grid-row: 1/3;
-		background-color: #293347;
+		background-color: var(--dark-blue);
 		/*making grid for children*/
 		display: grid;
 		grid-template-rows: 70px auto;
@@ -56,7 +65,7 @@
 			
 		}
 		.logo>div{
-			background-color: white;
+			background-color: var(--whitish);
 		}
 		.box1{
 			grid-row: 1/3;
@@ -90,7 +99,7 @@
 			
 		}
 		.nav a{
-			color: white;
+			color: var(--whitish);
 			text-decoration: none;
 			font-size: 20px;
 			font-weight: 600;
@@ -103,18 +112,25 @@
 
 	.header{
 		grid-column: 2/3;
-		background-color: #ecfeff;
+		background-color: var(--whitish);
 		display: grid;
-		grid-template-columns: 2fr 1fr;
-		grid-template-rows: 1fr 1fr;
-		box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+		color: var(--dark-grey);
+		grid-template-columns: 3fr 1fr;
+		grid-template-rows: auto 1fr;
+		/* box-shadow: -1px 4px 10px -1px rgba(37,36,34,0.75);
+-webkit-box-shadow: -1px 4px 10px -1px rgba(37,36,34,0.75);
+-moz-box-shadow: -1px 4px 10px -1px rgba(37,36,34,0.75); */
 	}
 	.search{
 		width: 80%;
 		height: 30px;
+		padding: 10px;
+		font-size: 16px;
+		color: var(--whitish);
 		border-style: none;
 		border-radius: 25px;
-		background-color: #e2e8f0;
+		border: 1px solid var(--whitish);
+		background-color: var(--light-grey);
 
 	}
 	.profilePic{
@@ -123,10 +139,16 @@
 		border-radius: 50%;
 		
 	}
-	.profile{
+	.profile-left{
 		display: flex;
-		justify-content: flex-start;
-		gap: 16px;
+		justify-content: start;
+		gap: 8px;
+		align-items: center;
+		align-content: space-between;
+	}
+	.profile-right{
+		display: flex;
+		justify-content: space-around;
 		align-items: center;
 	}
 	.pic{
@@ -134,12 +156,12 @@
 		border-radius: 50%;
 	}
 	.button{
-		background-color: #06b6d4;
-		border: #06b6d4 solid 1px;
+		background-color: var(--dark-blue);
+		border: var(--dark-blue) solid 1px;
 		height: 40px;
 		padding: 2px 24px;
 		border-radius: 25px;
-		color: white;
+		color:var(--whitish);
 		font-size: 16px;
 		font-weight: 600;
 	}
@@ -148,5 +170,77 @@
 /*MAIN*/
 	.main{
 		grid-column: 2/3;
-		background-color: #B0B4C2;
+		background-color: var(--light-grey);
+		display: grid;
+		grid-template-columns: 3fr 1fr;
+		color: var(--light-grey);
+	}
+	.main h1{
+		margin-bottom: 16px;
+		font-size: 16px;
+		color: var(--dark-grey);
+	}
+	
+	.project{
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 24px;
+		margin-right: 20px;
+	}
+	.card{
+		display:flex;
+		flex-direction: column;
+		align-items: flex-end;
+		height: 200px;
+		width: auto;
+		padding: 24px;
+		background-color: var(--whitish);
+		border-left: 8px solid var(--orange-border);
+		border-radius: 5px;
+		justify-items: center;
+		justify-content: space-between;
+		box-shadow: 4px 4px 10px -1px rgba(37,36,34,0.75);
+		-webkit-box-shadow: 4px 4px 10px -1px rgba(37,36,34,0.75);
+		-moz-box-shadow: 4px 4px 10px -1px rgba(37,36,34,0.75);
+	}
+	.card>h1{
+		align-self: flex-start;
+	}
+	.card>div{
+		margin-top: 12px;
+	}
+	.aside{
+		gap: 20px;
+	}
+	.aside>div{
+		box-shadow: 4px 4px 10px -1px rgba(37,36,34,0.75);
+-webkit-box-shadow: 4px 4px 10px -1px rgba(37,36,34,0.75);
+-moz-box-shadow: 4px 4px 10px -1px rgba(37,36,34,0.75);
+	}
+	.aside h2{
+		font-size: 12px;
+		color: var(--dark-grey);
+		padding-bottom: 5px;
+	}
+	.pane1{
+		background-color: var(--whitish);
+		border-radius: 5px;
+		font-size: 12px;
+		padding: 24px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 12px;
+		margin-bottom: 16px;
+	}
+	.announcement{
+		border-bottom: 1px solid var(--light-grey);
+		padding: 0 0 8px 0;
+	}
+	.follower{
+		display: grid;
+		grid-template-columns: 1fr 3fr;
+		gap: 16px;
+		padding-bottom: 8px;
+		
 	}
